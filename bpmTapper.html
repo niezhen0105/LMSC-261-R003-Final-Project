@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: #4284f5;
+            text-align: center;
+            font-size: 36px;
+            padding: 14px 40px;
+            font-family: "lusida console", monospace;
+        }
+        button:hover {
+            background-color: #4e42f5;
+        }
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            font-family: "lucida console", monospace;
+
+        body {
+            background-color: #42f5f2;
+        }
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>BPM Tapper</h1>
+
+    <button>Click Me</button><br />
+    <a href="index.html"><button>Home</button></a><br />
+    <a href ="drumset.html"><button>Drumset</button></a>
+   
+
+    
+    
+    <script>
+       // Step 1: Search and grab the element you want a change
+    let button = document.querySelector("button");
+    button.addEventListener("click", getBPM);
+
+    let clicks = [];
+
+    function getBPM() {
+    // Step 2: Make the change
+    const timeRightNow = Date.now();
+    clicks.push(timeRightNow);
+
+        if (clicks.length >=10) {
+           let totalInterval = 0
+            //calculate the bpm
+            for (let i = 1; i < clicks.length; i++) {
+                totalInterval += clicks[i] - clicks[i-1];
+            }
+            const AverageInterval = totalInterval / (clicks.length - 1);
+            const bpm = Math.round(convert(AverageInterval));
+            alert("The BPM is: " + bpm);
+            clicks = [];
+        }else {
+            console.log("There's not enough clicks yet to calculate.");
+        }
+    }
+
+    function convert(time) {
+        return 60 / (time / 1000);
+    }
+
+    </script>
+</body>
+</html>
