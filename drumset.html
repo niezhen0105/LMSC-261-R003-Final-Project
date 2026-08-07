@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  button {
+        background-color: #4284f5;
+        text-align: center;
+        font-size: 36px;
+        padding: 14px 40px;
+        font-family: "lusida console", monospace;
+  }
+    .drums {
+        display:block;
+        margin:auto;
+        width:500px;
+        height: 500px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Drumset</h1>
+   <a href="bpmTapper.html"><button>BOM Tapper</button></a><br />
+    <a href ="index.html"><button>Home</button></a>
+
+    <img id="kick" class="drums" src="Assets/images/kick.jpg" alt="A picture of class bass drum ">
+    <img id="snare" class="drums" src="Assets/images/snare.jpg" alt="A picture of class flat snare ">
+    <img id="hihat" class="drums" src="Assets/images/hihat.png" alt="A picture of closed hi-hat">
+    <img id="rackTom" class="drums" src="Assets/images/rackTom.jpg" alt="A picture of a rack tom">
+    <img id="floorTom" class="drums" src="Assets/images/floorTom.jpg" alt="A picture of a floor tom">
+    <img id="crash" class="drums" src="Assets/images/crash.png" alt="A picture of a crash">
+    <img id="ride" class="drums" src="Assets/images/ride.jpg" alt="A picture of a ride">
+    
+    
+    
+    
+
+    <script>
+        let kick = document.querySelector("#kick");
+        // classes-grouping things and ids-specific names
+        kick.addEventListener("click", playKick);
+
+        function playKick(){
+            let kickSound = new Audio("Assets/sound/kick.wav")
+            kickSound.play();
+        }
+         let snare = document.querySelector("#snare");
+        // classes-grouping things and ids-specific names
+        snare.addEventListener("click", playSnare);
+
+        function playSnare(){
+            let snareSound = new Audio("Assets/sound/snare.wav")
+            snareSound.play();
+        }
+        let hihat = document.querySelector("#hihat");
+        // classes-grouping things and ids-specific names
+        hihat.addEventListener("click", playHihat);
+
+        function playHihat(){
+            let hihatSound = new Audio("Assets/sound/hihat.wav")
+            hihatSound.play();
+        }
+        let rackTom = document.querySelector("#rackTom");
+        // classes-grouping things and ids-specific names
+        rackTom.addEventListener("click", playRackTom);
+
+        function playRackTom(){
+            let rackTomSound = new Audio("Assets/sound/rackTom.mp3")
+            rackTomSound.play();
+        }
+        let floorTom = document.querySelector("#floorTom");
+        // classes-grouping things and ids-specific names
+        floorTom.addEventListener("click", playFloorTom);
+
+        function playFloorTom(){
+            let floorTomSound = new Audio("Assets/sound/floorTom.mp3")
+            floorTomSound.play();
+        }
+        let crash = document.querySelector("#crash");
+        // classes-grouping things and ids-specific names
+        crash.addEventListener("click", playCrash);
+
+        function playCrash(){
+            let crashSound = new Audio("Assets/sound/crash.mp3")
+            crashSound.play();
+        }
+        let ride = document.querySelector("#ride");
+        // classes-grouping things and ids-specific names
+        ride.addEventListener("click", playRide);
+
+        function playRide(){
+            let rideSound = new Audio("Assets/sound/ride.mp3")
+            rideSound.play();
+        }
+    </script>
+</body>
+</html>
